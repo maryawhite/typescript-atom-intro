@@ -72,6 +72,8 @@ console.log(sub(10, 5));
 console.log("------------------");
 //Classes.
 //The properties are public by default
+//you could also create an interface and implement it in the class
+//you could also create another class and use the extends keyword
 var Person = /** @class */ (function () {
     function Person(id, name) {
         this.id = id;
@@ -87,6 +89,14 @@ var mike = new Person(2, "Mike Jordan");
 console.log(brad.id + " " + brad.name);
 console.log(brad, mike);
 console.log(brad.register());
+console.log("------------------");
+//Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+var numArray = getArray([1, 2, 3, 4]);
+var strArray = getArray(["Brad", "John", "Jill"]);
+// numArray.push("hello");  //we can't do this bc we used a generic in the function and then defined the type in the variable
 console.log("------------------");
 function foo(bar) {
     return "Hello " + bar;
